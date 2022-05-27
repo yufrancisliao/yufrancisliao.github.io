@@ -1,58 +1,101 @@
-# Strata Reloaded
+# hexo-theme-academia
 
-Simple, clean personal blogging template for Jekyll based on Strata by HTML5 UP.
+<img src="https://img.shields.io/github/v/release/PhosphorW/hexo-theme-academia"> <img src="https://img.shields.io/badge/hexo-3.1%2B-blue.svg"> <img src="https://img.shields.io/badge/license-MIT-green.svg">
 
-![Strata Reloaded template screenshot](images/_screenshot.png)
+Simple page for academic websites on Hexo, crafted from Jekyll/academicpages.
 
-## Features
+## Introduction
+This is a light & simple & responsive theme for academic websites on Hexo, crafted from [academicpages](https://github.com/academicpages/academicpages.github.io) on Jekyll. Thanks a lot.
 
-* Parallax background effect
-* Lightbox gallery
-* Pre-styled components
-* Blog with pagination
-* Configurable footer
-* Optimized for editing in [CloudCannon](http://cloudcannon.com/)
-* RSS/Atom feed
-* SEO tags
-* Google Analytics
-* Webmaster Verification
+The theme adopts only `post` and `page` in Hexo to show your informations. For an academic page, it's important to be simple and obvious.
 
-## Develop
+Example page: [phosphorw.github.io](https://phosphorw.github.io/)
 
-1. Add your site and author details in `_config.yml`.
-2. Add your Google Analytics key to `_config.yml`.
-3. Get a workflow going to see your site's output (with [CloudCannon](https://app.cloudcannon.com/) or Jekyll locally).
+![mockup](https://raw.githubusercontent.com/PhosphorW/phower-img-folder/master/hexo-theme-academia_mockup.jpg)
 
-## Develop
+## Preparation
 
-Urban was built with [Jekyll](http://jekyllrb.com/) version 3.3.1, but should support newer versions as well.
+Some skills you need:
+- Publish a Hexo blog: [Learn more](https://hexo.io)
+- Git
+- Markdown: [Learn more](https://www.appinn.com/markdown/#list)
+- Deploy a server (Optional)
+- Balabala...
 
-Install the dependencies with [Bundler](http://bundler.io/):
+## Installation
 
-~~~bash
-$ bundle install
-~~~
+The simplest way to install is to clone the entire repository:
+```
+git clone https://github.com/PhosphorW/hexo-theme-academia.git themes/Academia
+```
 
-Run `jekyll` commands through Bundler to ensure you're using the right versions:
+Some required renderers:
+```
+npm install hexo-renderer-pug hexo-renderer-stylus --save
+```
 
-~~~bash
-$ bundle exec jekyll serve
-~~~
+Set theme in hexo work folder's `_config.yml`
+```
+theme: Academia
+```
 
-## Editing
+## Create your academic page
 
-Strata Reloaded is already optimized for adding, updating and removing posts and footer elements in [CloudCannon](https://app.cloudcannon.com/).
+Only `post` and `page` are supported in this theme.
 
-### Posts
+```
+hexo n post "any title"
+```
+or
+```
+hexo n page "any title"
+```
 
-* Add, update or remove a post in the *Posts* collection.
-* Change the defaults when new posts are created in `_posts/_defaults.md`.
+**Important:** </br>
+Add `academia: true` in front_matter filed in `post .md`.
 
-### Footer
+<img src="https://raw.githubusercontent.com/PhosphorW/phower-img-folder/master/hexo-theme-academia_front-matter.png" width="660px" alt="front_matter">
 
-* Exposed as a data file to give clients better access.
-* Set in the *Data* / *Footer* section.
+Only post with `academia: true` front_matter will be shown on home (index) page. You can write your informations in either one post or some posts with this method. The front_matter doesn't works in `page`. The `pages` are standalone with its markdown content.
 
-## License
 
-Free for personal and commercial use under the CCA 3.0 license. See LICENSE file for additional information and terms of use. This theme was adapted from Strata by HTML5 UP for use with [CloudCannon](http://cloudcannon.com) by [Comfusion LLC](http://comfusionllc.com).
+## Theme Configurtion
+All of below options can be config in theme folder `_config.yml`
+
+- Top Menu: in-page anchor, new page links or any links you like
+- Side Bar: Support avatar, social links, extra social links (optional), CV_download_link
+- Box-shadow mode (optional)
+
+All icons in page is supported with [font-awesome-5](https://fontawesome.com/) (~~font-awesome-4~~)
+
+> fontawesome-4 is not used since v1.2.1. If you want to update manually, first change CDN stylesheet to fa5. Then change your previous icon class `fa` to `fas` or `fas`.
+
+If you need rss feed, use hexo plugin: [hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed)
+
+![theme-layout](https://raw.githubusercontent.com/PhosphorW/phower-img-folder/master/hexo-theme-academia_layout.png)
+
+### Update Theme
+This theme supports `data files` smooth update. Copy `_config.yml` in theme folder to site folder `/source/_data/theme.yml`, if there is no `_data` folder, create it.
+
+Then you can modify your theme configuration in the mentioned `theme.yml`. If there is any update, just pull the new branch and your configurations won't be merged. 
+
+**Note:**
+1. When use `data files` to config theme, you must restart hexo server after any modifictions. `hexo server` again.
+2. Sometimes there will be changes in theme `_config.yml`, please refer to [release page](https://github.com/PhosphorW/hexo-theme-academia/releases) for more details before update.
+
+## Document
+中文文档：[Hexo-Theme-Academia 说明文档](https://phower.me/2020/03/Hexo-theme-academia-%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3/)
+
+## Q&A
+
+- **Some special url links?**
+    1. QQ: `tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=[your number]`
+    2. E-mail: `mailto:[your email]`
+    3. rss: `atom.xml` (need additional hexo plugin to generate XML file)
+
+## Changelogs
+
+🚀[Release page](https://github.com/PhosphorW/hexo-theme-academia/releases)
+
+- **v1.2.1**: some small improvements.
+- **v1.2.0**: support pjax and data files.
